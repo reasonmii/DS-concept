@@ -117,5 +117,62 @@
   - Ward: This is not a distance measurement. Instead, it merges the two clusters whose merging will result in the lowest inertia.
 
 ### Decision Tree
-- 
+- Pros
+  - Require relatively few pre-processing steps
+  - Can work easily with all types of variables (continuous, categorical, discrete)
+  - Do not require normalization or scaling
+  - Decisions are transparent
+  - Not affected by extreme univariate values
+- Cons
+  - Can be computationally expensive relative to other algorithms
+  - Small changes in data can result in significant changes in predictions
+- Choosing Splits : Gini impurity, entropy, information gain, log loss
+- Gini impurity : $1 - \sum_{i=1}^N P(i)^2$
+  - $P(i)$ = the probability of samples belonging to class i in a given node.
+  - ex) $1 - P(apple)^2 - P(grape)^2$
+- Hyperparameters
+  - max_depth : how deep the tree is allowed to grow
+  - min_samples_split :  the minimum number of samples that a node must have for it to split into more nodes
+  - min_samples_leaf : the minimum number of samples that must be in each **child** node after the parent splits
+- Grid search : Finding the optimal set of hyperparameters
+```
+rf = RandomForestClassifier(random_state=0)
+
+cv_params = {'max_depth': [2,3,4,5, None], 
+             'min_samples_leaf': [1,2,3],
+             'min_samples_split': [2,3,4],
+             'max_features': [2,3,4],
+             'n_estimators': [75, 100, 125, 150]
+             }  
+scoring = {'accuracy', 'precision', 'recall', 'f1'}
+
+rf_cv = GridSearchCV(estimator=rf, param_grid=cv_params, scoring=scoring, cv=5, refit='f1')
+
+rf_cv.fit(X_train, y_train)
+```
+- Bagging : bootstrap aggregating
+  - bootstrapping refers to sampling with replacement
+  - Why to use it
+    - Reduces variance: Standalone models can result in high variance. Aggregating base models’ predictions in an ensemble help reduce it.
+    - Fast: Training can happen in parallel across CPU cores and even across different servers.
+    - Good for big data
+      - Bagging doesn’t require an entire training dataset to be stored in memory during model training.
+      - You can set the sample size for each bootstrap to a fraction of the overall data, train a base learner, and string these base learners together without ever reading in the entire dataset all at once. 
+- Random Forest : Bagging + random feature sampling
+  - It randomizes **samples** and the data by **features**
+  - This randomization from sampling often leads to both better performance scores and faster execution times,
+    - making random forest a powerful and relatively simple tool in the hands of any data professional.
+  - sklearn.ensemble : RandomForestRegressor, RandomForestClassifier
+- Gradient Boosting : uses an ensemble of weak learners to make a final prediction.
+  - One of the most powerful supervised learning techniques
+  - It works by building an ensemble of decision tree base learners
+    - wherein each base learner is trained successively,
+    - attempts to predict the error—also known as “residual”—of the previous tree,
+    - and therefore compensate for it.
+  - Its base learner trees are known as “weak learners” or “decision stumps.”
+    - They are generally very shallow. 
+  - More resilient to high variance that results from overfitting the data due to being comprised of high-bias, low-variance weak learners.
+  - xgboost : XGBClassifier, XGBRegressor
+
+
 
