@@ -144,19 +144,19 @@
     - This is not necessarily true.
     - A 95% confidence interval shows a range of values that likely includes the actual population mean.
 - Construct a confidence interval
-  - step
-    - Identify a sample statistic.
-    - Choose a confidence level.
-    - Find the margin of error.
-      - For a small sample size, you calculate the margin of error by multiplying the t-score by the standard error.
-      - standard error (means) = $SE(x) = s / \sqrt{n}$
-    - Calculate the interval.
-  - Large sample: Z-scores - calculate the margin of error
-  - Small sample: T-scores
-    - use the t-distribution
-    - because there is more uncertainty involved in estimating the standard error for small sample sizes
+  - Identify a sample statistic.
+  - Choose a confidence level.
+    - Large sample: Z-scores - calculate the margin of error
+    - Small sample: T-scores
+      - use the t-distribution
+      - because there is more uncertainty involved in estimating the standard error for small sample sizes
+  - Find the margin of error.
+    - For a small sample size, you calculate the margin of error by multiplying the t-score by the standard error.
+    - standard error (means) = $SE(x) = s / \sqrt{n}$
+  - Calculate the interval.
+    - Confidence intervals for small sample sizes only deal with population means, and not population proportions. 
 
-
+### One-tailed and Two-tailed tests
 
 
 
