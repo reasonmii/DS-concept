@@ -64,6 +64,21 @@
     - $x_i$ : the location of a particular observation
     - $C_k$ : the location of the centroid of cluster $k$, which is the cluster to which point $x_i$ is assigned
     - The greater the inertia, the greater the distances between points and their centroids
+    - Inertia is a useful metric to determine how well your clustering model identifies meaningful patterns in the data.
+      - But it’s generally not very useful by itself.
+      - If your model has an inertia of 53.25, is that good? It depends.
+  - The elbow method
+    - Compare different values of k
+    - Help decide which clustering gives the most meaningful model of your data
+  - Silhouette analysis : comparison of different models’ silhouette scores
+    - Silhouette coefficient = $\frac{(b - a)}{max(a, b)}$
+      - $a$ : the mean distance between the instance and each other instance in the same cluster
+      - $b$ : the mean distance from the instance to each instance in the nearest other cluster (i.e., excluding the cluster that the instance is assigned to)
+      - $max(a,b)$ : which value is greater
+      - between -1 (bad) to +1 (good)
+        - +1 : point is close to other points in its own cluster and well separted from points in other clusters
+    - Silhouette score is the mean silhouette coefficient over all the observations in a model
+      - The greater the silhouette score, the better defined the model clusters
 - K-means++
   - still randomly initializes centroids in the data, but it does so based on a probability calibration
   - it randomly chooses one point within the data to be the first centroid, then it uses other data points as centroids, selecting them pseudo-randomly.
@@ -101,5 +116,6 @@
   - Average: The distance between each cluster’s centroid and other clusters’ centroids.
   - Ward: This is not a distance measurement. Instead, it merges the two clusters whose merging will result in the lowest inertia.
 
-
+### Decision Tree
+- 
 
