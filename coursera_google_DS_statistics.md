@@ -62,7 +62,74 @@
     - Financial transactions per second at a bank
 
 ### Model data with the normal distribution
+- Probability functions
+  - Probability Mass Functions (PMFs) represent discrete random variables
+  - Probability Density Functions (PDFs) represent continuous random variables 
+- Normal Distribution
+  - The shape is a bell curve
+  - The mean is located at the center of the curve
+  - The curve is symmetrical on both sides of the mean
+  - The total area under the curve equals 1
+- The Empirical rule
+  - 68% of values fall within 1 standard deviation of the mean
+  - 95% of values fall within 2 standard deviations of the mean
+  - 99.7% of values fall within 3 standard deviations of the mean
 
+### Sampling
+- Population : the entire dataset that you want to draw conclusions about. 
+- Sample : a subset of a population. 
+- Sampling : the process of selecting a subset of data from a population.
+  - Identify the target population
+  - Select the sampling frame
+  - Choose the sampling method
+  - Determine the sample size
+  - Collect the sample data
+- Why Sampling?
+  - It’s often impossible or impractical to collect data on the whole population due to size, complexity, or lack of accessibility
+  - It’s easier, faster, and more efficient to collect data from a sample
+  - Using a sample saves money and resources
+  - Storing, organizing, and analyzing smaller datasets is usually easier, faster, and more reliable than dealing with extremely large datasets 
+- Probability Sampling method
+  - Simple random sampling
+    - every member of a population is selected randomly and has an equal chance of being chosen
+  - Stratified random sampling
+    - divide a population into groups, and randomly select some members from each group to be in the sample
+  - Cluster random sampling
+    - divide a population into clusters, randomly select certain clusters, and include all members from the chosen clusters in the sample. 
+  - Systematic random sampling
+    - put every member of a population into an ordered sequence.
+    - Then, you choose a random starting point in the sequence and select members for your sample at regular intervals. 
+- Non-probability Sampling Methods 
+  - Convenience sampling
+    - choose members of a population that are easy to contact or reach
+  - Voluntary response sampling
+    - consists of members of a population who volunteer to participate in a study.
+  - Snowball sampling
+    - recruit initial participants to be in a study and then ask them to recruit other people to participate in the study. 
+  - Purposive sampling
+    - select participants based on the purpose of their study. 
+    - applicants who do not fit the profile are rejected. 
+- Central Limit Theorem
+  - It states that the sampling distribution of the mean approaches a **normal distribution** as the sample size increases. 
+  - In order to apply the central limit theorem, the following conditions must be met
+    - Randomization
+      - Your sample data must be the result of random selection.
+      - Random selection means that every member in the population has an equal chance of being chosen for the sample.
+    - Independence
+      - Your sample values must be independent of each other.
+      - Independence means that the value of one observation does not affect the value of another observation.
+    - Sample size: The sample size needs to be sufficiently large.
+    - Requirements for precision.
+      - The larger the sample size,
+      - the more closely your sampling distribution will resemble a normal distribution,
+      - and the more precise your estimate of the population mean will be.
+    - The shape of the population.
+      - If your population distribution is roughly bell-shaped and already resembles a normal distribution,
+      - the sampling distribution of the sample mean will be close to a normal distribution even with a small sample size. 
+- Sampling distribution : a probability distribution of a sample statistic
+  - Standard Error : standard deviation of a **sample** statistic
+
+### Confidence Intervals
 
 
 
