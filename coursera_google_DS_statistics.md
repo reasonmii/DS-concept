@@ -157,16 +157,24 @@
     - Confidence intervals for small sample sizes only deal with population means, and not population proportions. 
 
 ### One-tailed and Two-tailed tests
+- A one-tailed test results when the alternative hypothesis states that the actual value of a population parameter is either **less than or greater than** the value in the null hypothesis. 
+  - A left-tailed test : the actual value of the parameter **<** the value in the null hypothesis
+  - A right-tailed test : the actual value of the parameter **>** the value in the null hypothesis. 
+- A two-tailed test results when the alternative hypothesis states that the actual value of the parameter **does not equal** the value in the null hypothesis.
+- In general, a one-tailed test may provide more power to detect an effect in a single direction
+  - However, before conducting a one-tailed test, you should consider the consequences of missing an effect in the other direction. 
+- Example
+  - the null hypothesis states that the mean weight of a penguin population equals 30 lbs. 
+  - left-tailed test : the alternative hypothesis states that the mean weight of the penguin population is less than (“<“) 30 lbs. 
+  - right-tailed test : the alternative hypothesis states that the mean weight of the penguin population is greater than (“>“) 30 lbs. 
+  - two-tailed test : the alternative hypothesis states that the mean weight of the penguin population is not equal to (“!=“) 30 lbs. 
 
-
-
-
-
-
-
-
-
-
-
-
+### A/B Testing
+- Compare two versions of something to find out which version performs better
+- Randomized controlled experiment 
+  - test subjects are randomly assigned to a control group and a treatment group
+  - Treatment : new change being tested in the experiment
+  - The control group is not exposed to the treatment.
+  - The treatment group is exposed to the treatment.
+  - The difference in metric values between the two groups measures the treatment’s effect on the test subjects.
 
