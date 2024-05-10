@@ -47,3 +47,59 @@
 - $F_B$ score : $(1 + B^2) \cdot \frac{precision \cdot recall}{B^2 \cdot precision + recall}$
   - if you still want to capture both precision and recall in a single metric, but you consider one more important than the other
   - $B$ is a factor that represents how many times more important recall is compared to precision
+
+### Clustering
+- K-means
+  - Process
+    - Randomly place centroids in the data space.
+    - Assign each point to its nearest centroid.
+    - Update the location of each centroid to the mean position of all the points assigned to it.
+    - Repeat steps 2 and 3 until the model converges (i.e., all centroid locations remain unchanged with successive iterations).
+  - K-means works by minimizing intercluster variance
+    - it aims to minimize the distance between points and their centroids
+    - it works best when the clusters are round
+    - If you aren’t satisfied with the way K-means is clustering your data, you need other clustering methods
+  - Inertia : measurement of intracluster distance = $\sum_{i=1}^n (x_i - C_k)^2$
+    - n : the number of observations in the data
+    - $x_i$ : the location of a particular observation
+    - $C_k$ : the location of the centroid of cluster $k$, which is the cluster to which point $x_i$ is assigned
+    - The greater the inertia, the greater the distances between points and their centroids
+- K-means++
+  - still randomly initializes centroids in the data, but it does so based on a probability calibration
+  - it randomly chooses one point within the data to be the first centroid, then it uses other data points as centroids, selecting them pseudo-randomly.
+  - The probability that a point will be selected as a centroid increases the farther it is from other centroids.
+  - This helps to ensure that centroids aren’t initially placed very close together, which is when convergence in local minima is most likely to occur.
+  - K-means++ is the default implementation when you instantiate K-means in scikit-learn.
+- DBSCAN : density-based spatial clustering of applications with noise
+  - Find clusters based on density, the shape of the cluster isn’t as important as it is for K-means
+    - Instead of trying to minimize variance between points in each cluster,
+    - it searches your data space for continuous regions of high density
+  - Process
+    - Start at random point
+    - Examine radius and around the point
+    - If there are min_samples within radius, $\epsilon$ of this instance (including itself), all samples in this neighborhood become part of the same cluster
+    - Repeat
+  - Hyperparameters
+    - eps: Epsilon $\epsilon$ - The radius of your search area from any given point
+    - min_samples: The number of samples in an ε-neighborhood for a point to be considered a core point (including itself)
+- Agglomerative clustering
+  - First assigning every point to its own cluster, then progressively combining clusters based on intercluster distance.
+  - It requires that you specify a desired number of clusters or a distance threshold, which is the linkage distance.
+  - If you do not specify a desired number of clusters, then the distance threshold is an important parameter,
+    - because without it the model would converge into a single cluster every time.
+  - When does it stop?
+    - You reach a specified number of clusters.
+    - You reach an intercluster distance threshold (clusters that are separated by more than this distance are too far from each other and will not be merged).
+  - Hyperparameters
+    - n_clusters: The number of clusters you want in your final model
+    - linkage: The linkage method to use to determine which clusters to merge (as described above)
+    - affinity: The metric used to calculate the distance between clusters. Default = euclidean distance.
+    - distance_threshold: The distance above which clusters will not be merged (as described above)
+- Linkage : measure the distances that determine whether or not to merge the clusters
+  - Single: The minimum pairwise distance between clusters
+  - Complete: The maximum pairwise distance between clusters
+  - Average: The distance between each cluster’s centroid and other clusters’ centroids.
+  - Ward: This is not a distance measurement. Instead, it merges the two clusters whose merging will result in the lowest inertia.
+
+
+
