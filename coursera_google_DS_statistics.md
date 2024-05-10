@@ -130,6 +130,38 @@
   - Standard Error : standard deviation of a **sample** statistic
 
 ### Confidence Intervals
+- Confidence level expresses the uncertainty of the estimation process
+  - long-term success rate of the method, or the estimation process based on random sampling. 
+- 95% confidence
+  - if you take repeated random samples from a population,
+  - and construct a confidence interval for each sample using the same method,
+  - you can expect that 95% of these intervals will capture the population mean.
+  - You can also expect that 5% of the total will not capture the population mean. 
+- Incorrect interpretations
+  - 95% refers to the probability that the population mean falls within the constructed interval
+    - Remember that a 95% confidence level refers to the success rate of the estimation process.
+  - 95% refers to the percentage of data values that fall within the interval 
+    - This is not necessarily true.
+    - A 95% confidence interval shows a range of values that likely includes the actual population mean.
+- Construct a confidence interval
+  - step
+    - Identify a sample statistic.
+    - Choose a confidence level.
+    - Find the margin of error.
+      - For a small sample size, you calculate the margin of error by multiplying the t-score by the standard error.
+      - standard error (means) = $SE(x) = s / \sqrt{n}$
+    - Calculate the interval.
+  - Large sample: Z-scores - calculate the margin of error
+  - Small sample: T-scores
+    - use the t-distribution
+    - because there is more uncertainty involved in estimating the standard error for small sample sizes
+
+
+
+
+
+
+
 
 
 
